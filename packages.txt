@@ -1,0 +1,28 @@
+# Streamlit Community Cloud — Linux apt 依赖
+# 这些系统级包在 Cloud 容器构建时通过 apt-get 安装
+
+# kaleido 静态图像导出所需
+libgconf-2-4
+libgtk-3-0
+libnotify4
+libnss3
+libxss1
+libxtst6
+xdg-utils
+libatk-bridge2.0-0
+libdrm2
+libxkbcommon0
+libxcomposite1
+libxdamage1
+libxrandr2
+libgbm1
+libasound2
+
+# matplotlib 后端所需
+libfreetype6-dev
+libpng-dev
+pkg-config
+
+# 中文字体（PDF 报告）
+fonts-wqy-zenhei
+fonts-wqy-microhei

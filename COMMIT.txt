@@ -1,0 +1,84 @@
+============================================================
+ Git 提交信息 & 一键推送命令
+ 项目: 智能基金定投策略回测与AI优化系统
+ 版本: v1.0.0
+ 日期: 2026-06-10
+============================================================
+
+--- 标准提交信息 (复制此内容用于 git commit -m) ---
+
+v1.0.0 最终提交：完整的基金定投回测与AI优化系统
+
+新增 9 种定投策略（普通/止盈/价值平均/MA动态/60日均线/MACD/RSI/波动率/ML随机森林）
+Pandas 全向量化引擎，回测速度提升 63 倍（8策略从 4s → 0.063s）
+Optuna 贝叶斯参数优化 + 训练测试分离 + 过拟合检测 + 4合1敏感性分析
+Web 界面：黑暗模式 + 实时进度条 + 6标签页 + 4个实用工具 + PDF报告
+数据层：智能缓存 + aiohttp 异步批量下载 + 自动复权计算
+工程质量：57 个 pytest 单元测试 + Black 格式化 + 完整类型注解 + 12 个 utils 函数
+文档：README + PROJECT_REPORT(6000字) + TEST_REPORT + DEPLOY + DEFENSE_GUIDE + SUBMISSION_GUIDE + CHANGELOG
+部署：Streamlit Cloud 一键部署 + GitHub Actions CI/CD + packages.txt
+
+Co-authored-by: Claude Code <claude@anthropic.com>
+
+
+--- 一键提交到 GitHub 命令 (复制以下全部命令到终端执行) ---
+
+# === 步骤 1: 初始化 Git 仓库 ===
+cd fund_backtest
+git init
+git config user.name "Your Name"
+git config user.email "your-email@example.com"
+
+# === 步骤 2: 添加所有文件 ===
+git add .
+
+# === 步骤 3: 提交（使用上面的标准提交信息）===
+git commit -m "v1.0.0 最终提交：完整的基金定投回测与AI优化系统
+
+新增 9 种定投策略（普通/止盈/价值平均/MA动态/60日均线/MACD/RSI/波动率/ML随机森林）
+Pandas 全向量化引擎，回测速度提升 63 倍（8策略从 4s → 0.063s）
+Optuna 贝叶斯参数优化 + 训练测试分离 + 过拟合检测 + 4合1敏感性分析
+Web 界面：黑暗模式 + 实时进度条 + 6标签页 + 4个实用工具 + PDF报告
+数据层：智能缓存 + aiohttp 异步批量下载 + 自动复权计算
+工程质量：57 个 pytest 单元测试 + Black 格式化 + 完整类型注解 + 12 个 utils 函数
+文档：README + PROJECT_REPORT(6000字) + TEST_REPORT + DEPLOY + DEFENSE_GUIDE + SUBMISSION_GUIDE + CHANGELOG
+部署：Streamlit Cloud 一键部署 + GitHub Actions CI/CD + packages.txt"
+
+# === 步骤 4: 推送到 GitHub（替换 YOUR_USERNAME 为你的 GitHub 用户名）===
+git remote add origin https://github.com/YOUR_USERNAME/fund-backtest.git
+git branch -M main
+git push -u origin main
+
+# === 步骤 5: 创建版本标签 ===
+git tag -a v1.0.0 -m "v1.0.0 最终发布版本"
+git push origin v1.0.0
+
+# === 步骤 6: 在 Streamlit Cloud 部署 ===
+# 打开 https://share.streamlit.io → New app
+# Repository: YOUR_USERNAME/fund-backtest
+# Branch: main
+# Main file path: app.py
+# → 点击 Deploy!
+
+
+--- 提交文件清单 (26 个文件, 98KB deploy.zip) ---
+
+源代码 (9 个):
+  app.py, backtest.py, strategies.py, data_fetcher.py, visualization.py,
+  pdf_report.py, utils.py, main.py, write_report.py
+
+配置文件 (4 个):
+  requirements.txt, packages.txt, .gitignore, .streamlit/config.toml
+
+CI/CD (1 个):
+  .github/workflows/deploy.yml
+
+测试 (3 个):
+  tests/conftest.py, tests/test_backtest.py, tests/__init__.py
+
+目录占位 (2 个):
+  data/.gitkeep, output/.gitkeep
+
+文档 (7 个):
+  README.md, PROJECT_REPORT.md, TEST_REPORT.md, CHANGELOG.md,
+  DEPLOY.md, DEFENSE_GUIDE.md, SUBMISSION_GUIDE.md

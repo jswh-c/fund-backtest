@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data cache（基金净值缓存 — 运行时会自动重新下载）
+data/*.csv
+!data/.gitkeep
+
+# Output（图表输出 — 运行时会自动生成）
+output/*.html
+!output/.gitkeep
+
+# Generated files
+*.xlsx
+test_report.pdf
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Optuna
+optuna-journal.log

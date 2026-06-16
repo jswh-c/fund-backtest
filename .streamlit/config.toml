@@ -1,0 +1,51 @@
+[theme]
+# 深蓝色主题（专业金融应用风格）
+primaryColor = "#1a5276"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#31333f"
+font = "sans-serif"
+
+[browser]
+# 不收集匿名使用数据
+gatherUsageStats = false
+# 启动时不自动打开浏览器（Cloud 部署时自动忽略）
+serverAddress = "0.0.0.0"
+
+[server]
+# Cloud 部署核心配置
+enableCORS = true
+enableXsrfProtection = true
+enableStaticServing = true
+# 文件上传限制 50MB
+maxUploadSize = 50
+# Cloud 默认端口
+port = 8501
+# 无头模式（Cloud 环境）
+headless = true
+# 不打印多余日志
+enableWebsocketCompression = true
+
+[runner]
+# 快速重新运行机制
+fastReruns = true
+# 魔术命令禁用（避免误触发）
+magicEnabled = false
+
+[logger]
+# 日志级别：生产环境用 warning，减少 Cloud 日志量
+level = "warning"
+# 简化日志格式
+messageFormat = "%(asctime)s %(levelname)s %(message)s"
+
+[client]
+# 显示工具栏（用户可切换主题）
+toolbarMode = "auto"
+# 侧边栏默认展开
+showSidebarNavigation = true
+
+[global]
+# 开发模式关闭
+developmentMode = false
+# 禁用遥测
+disableTelemetry = true
