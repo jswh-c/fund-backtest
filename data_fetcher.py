@@ -11,8 +11,12 @@ import os
 import time
 import json
 import asyncio
-import aiohttp
 from datetime import datetime
+
+try:
+    import aiohttp
+except ImportError:
+    aiohttp = None  # Streamlit Cloud 可能无法安装此可选依赖
 from typing import Optional
 
 # 配置
@@ -508,8 +512,10 @@ async def batch_download_async(
     ----
     dict[str, pd.DataFrame | None] : {fund_code: df or None}
     """
-    import aiohttp
     import asyncio
+
+    if aiohttp is None:
+        raise ImportError("aiohttp is not installed. Use batch_download() for synchronous mode.")
 
     if end_date is None:
         end_date = datetime.now().strftime("%Y-%m-%d")
@@ -580,9 +586,11 @@ def batch_download_async_sync(
         loop = asyncio.get_event_loop()
         if loop.is_running():
             # 在已运行的事件循环中（如 Jupyter），使用 nest_asyncio
-            import nest_asyncio
-
-            nest_asyncio.apply()
+            try:
+                import nest_asyncio
+                nest_asyncio.apply()
+            except ImportError:
+                pass
     except RuntimeError:
         pass
     return asyncio.run(batch_download_async(fund_codes, start_date, end_date, max_concurrent))
